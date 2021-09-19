@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Data Binding Doble (Desde y hacia el DOM)</h2>
+  <div class="row">
+    <div class="form-group">
+      <label>Nombre:</label>
+      <!-- databinding persona variable from app.component.ts -->
+      <input type="text" class="form-control" [(ngModel)]="persona.Nombre" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+      <label>Apellido:</label>
+      <input type="text" class="form-control" [(ngModel)]="persona.Apellido" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+      <label>Edad:</label>
+      <input type="text" class="form-control" [(ngModel)]="persona.Edad" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+      <label>Documento:</label>
+      <input type="text" class="form-control" [(ngModel)]="persona.Documento" />
+    </div>
+  </div>
+
+  <!-- event binding (desde el DOM hacia el TS) -->
+  <button type="button" class="btn btn-primary" (click)="eventoBoton()">Ingresar</button>
+</div>
+
+<router-outlet></router-outlet>

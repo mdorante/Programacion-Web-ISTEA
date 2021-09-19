@@ -1,0 +1,17 @@
+<h1>Mi primer App en Angular</h1>
+
+<!-- Utilizamos nuestro primer componente -->
+<app-mycomponent></app-mycomponent>
+
+<h2>Data Binding</h2>
+
+<h4>Interpolacion (Desde el TS hacia el DOM)</h4>
+
+<h5>{{ title }}</h5>
+
+<!-- Utilizamos el componente child -->
+<!-- childproperty es el nombre del Input en child.component.ts -->
+<!-- datos es el nombre de la var de app.component.ts que vamos a bindear -->
+<app-child [childproperty]="datos"></app-child>
+
+<router-outlet></router-outlet>

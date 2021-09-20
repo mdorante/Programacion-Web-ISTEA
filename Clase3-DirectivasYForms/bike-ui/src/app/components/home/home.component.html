@@ -5,24 +5,40 @@
     </div>
 
     <div class="form-group">
-      <label>Buyer Name</label>
+      <label>Username</label>
       <!-- con formControlName vinculo cada entrada de la vista con su respectivo Control de TS -->
       <input
         type="text"
         class="form-control"
-        formControlName="buyerName"
+        formControlName="username"
         autofocus
       />
+      <!-- mostramos un mensaje al usuario para indicar que la entrada se encuentra errada o vacia -->
+      <div *ngIf="controles.username.errors?.pattern">
+        <p class="text-danger">Username Invalid</p>
+        <!-- usamos la func para mostrar el error que hay -->
+        <span class="text-danger">{{ getError("username") }}</span>
+      </div>
     </div>
 
     <div class="form-group">
       <label>Email</label>
       <input type="text" class="form-control" formControlName="email" />
+      <div *ngIf="controles.email.errors?.email">
+        <p class="text-danger">Invalid Email</p>
+        <!-- usamos la func para mostrar el error que hay -->
+        <span class="text-danger">{{ getError("email") }}</span>
+      </div>
     </div>
 
     <div class="form-group">
       <label>Phone</label>
       <input type="text" class="form-control" formControlName="phone" />
+      <div *ngIf="controles.phone.errors?.pattern">
+        <p class="text-danger">Invalid Phone Number</p>
+        <!-- usamos la func para mostrar el error que hay -->
+        <span class="text-danger">{{ getError("phone") }}</span>
+      </div>
     </div>
 
     <div class="form-group">
@@ -52,14 +68,24 @@
 
     <div class="form-group">
       <label>Contact (true | false)</label>
-      <select class="form-control" formControlName="contact" required>
-        <option value="selecciona">--Seleccione--</option>
+      <select class="form-control" formControlName="contact">
+        <option value="seleccione">--Seleccione--</option>
         <option value="true">Si</option>
         <option value="false">No</option>
       </select>
+      <div
+        *ngIf="
+          controles.contact.value == 'seleccione' && controles.contact.touched
+        "
+      >
+        <p class="text-danger">Seleccionar una opcion</p>
+      </div>
     </div>
 
-    <br>
-    <button type="submit" class="btn btn-primary">Enviar Formulario</button>
+    <br />
+    <!-- habilitar el boton de enviar formulario solo si es valido el formulario -->
+    <button [disabled]="bikeForm.invalid" type="submit" class="btn btn-primary">
+      Enviar Formulario
+    </button>
   </form>
 </div>

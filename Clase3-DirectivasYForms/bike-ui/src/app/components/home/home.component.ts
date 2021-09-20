@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +21,20 @@ export class HomeComponent implements OnInit {
   bikeForm: FormGroup;
 
   constructor() {
-    this.bikeForm = new FormGroup({});
+
+    // el FormGroup representa el conjunto de todos los FormControls como una sola entidad
+    this.bikeForm = new FormGroup({  
+      // cada FormControl representa un solo campo del formulario
+      // encapsula el valor y el estado (valido, sucio, error) del campo 
+      buyerName: new FormControl(),
+      email: new FormControl(),
+      phone: new FormControl(),
+      model: new FormControl(),
+      serialNumber: new FormControl(),
+      purchasePrice: new FormControl(),
+      purchaseDate: new FormControl(),
+      contact: new FormControl(),
+    });
   }
 
   ngOnInit(): void {}

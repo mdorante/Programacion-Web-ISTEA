@@ -1,0 +1,31 @@
+<div class="page-container">
+  <div class="sidebar">
+    <div>
+      <div class="logo-container1">
+        <!--Fuente Logo.-->
+        <!--https://en.wikipedia.org/wiki/File:Circle-icons-tools.svg-->
+        <a [routerLink]="['/home']"
+          ><img class="logoApp" src="../../../assets/images/home.png"
+        /></a>
+        <h2 id="title1">Home</h2>
+      </div>
+      <div class="logo-container2">
+        <img class="logo" src="../../../assets/images/user.png">
+        <div class="userLogCss">
+          {{ userService.userLog.name }}
+        </div>
+      </div>
+
+      <div class="list-items">
+        <a [routerLink]="['/dashboard']" class="list-item">
+          <em class="material-icons">dashboard</em>
+          Dashboard
+        </a>
+        <a [routerLink]="['/userInfo']" class="list-item">
+          <em class="material-icons">construction</em>
+          Tools
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

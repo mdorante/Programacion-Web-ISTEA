@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <form class="login" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+    <div class="titleBar">
+      <h3>Login</h3>
+    </div>
+
+    <div class="form-group campos">
+      <input
+        type="text"
+        placeholder="Username"
+        class="form-control inputA"
+        formControlName="username"
+        required
+      />
+    </div>
+    <div class="form-group campos">
+      <input
+        type="password"
+        placeholder="Password"
+        class="form-control inputA"
+        formControlName="password"
+        required
+      />
+    </div>
+
+    <div class="campos" *ngIf="errorMessage != ''">
+      <div class="alert alert-danger">{{ errorMessage }}</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary buttonLogin">Enter</button>
+  </form>
+</div>

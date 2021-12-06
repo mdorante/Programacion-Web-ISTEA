@@ -1,0 +1,40 @@
+<div class="barraMia">
+  <app-navbar></app-navbar>   
+  <div class="wrapper">
+      <div class="Contenido">
+          <form [formGroup]="clienteForm" (ngSubmit)="submitModif()">
+              <h3>Información</h3>
+              <div class="form-group campos">
+                  <label>Usuario</label>
+                  <input type="text" class="form-control" [(ngModel)]="eventUser.username" formControlName="username" >
+              </div>
+
+              <div class="form-group campos">
+                  <label>Contraseña</label>
+                  <input type="password" class="form-control" [(ngModel)]="eventUser.password" formControlName="password" required>
+
+              </div>
+
+              <div class="form-group campos">
+                  <label>Nombre</label>
+                  <input type="text" class="form-control" [(ngModel)]="eventUser.name" formControlName="name" required>
+              </div>
+          
+              
+
+              <div class="form-group campos">
+                  <label>Correo electrónico</label>
+                  <input type="text" class="form-control" [(ngModel)]="eventUser.email" formControlName="email" required readonly>
+              </div>
+
+          
+              <div class="campos" *ngIf="errorMessage != ''">
+                  <div class="alert alert-danger">{{errorMessage}}</div>
+              </div>
+              
+              <button type="submit" class="btn btn-primary buttonModificar">Modificar datos</button>
+          </form>
+      </div>
+  </div> 
+</div>
+<app-side-navbar></app-side-navbar>

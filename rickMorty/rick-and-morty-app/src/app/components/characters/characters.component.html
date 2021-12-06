@@ -1,0 +1,18 @@
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let item of characters">
+        <tr>
+          <td>{{ item.name }}</td>
+          <td>Details</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
